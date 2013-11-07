@@ -280,7 +280,7 @@ module.exports = (grunt) ->
 				tasks: [
 					'copy:app'
 					'copy:dev'
-					'karma'
+					#'karma'
 				]
 				options:
 					livereload: true
@@ -292,7 +292,7 @@ module.exports = (grunt) ->
 					'copy:app'
 					'coffee:app'
 					'copy:dev'
-					'karma'
+					#'karma'
 				]
 				options:
 					livereload: true
@@ -303,7 +303,7 @@ module.exports = (grunt) ->
 					'copy:app'
 					'jade:views'
 					'copy:dev'
-					'karma'
+					#'karma'
 				]
 				options:
 					livereload: true
@@ -324,7 +324,7 @@ module.exports = (grunt) ->
 					'copy:app'
 					'template:indexDev'
 					'copy:dev'
-					'karma'
+					#'karma'
 				]
 				options:
 					livereload: true
@@ -336,7 +336,7 @@ module.exports = (grunt) ->
 					'template:indexDev'
 					'jade:spa'
 					'copy:dev'
-					'karma'
+					#'karma'
 				]
 				options:
 					livereload: true

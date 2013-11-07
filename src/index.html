@@ -31,11 +31,15 @@
 					<li ng-repeat="todo in todos">
 						<input type="checkbox" ng-model="todo.done">
 						<span class="done-{{todo.done}}">{{todo.text}}</span>
+						<span ng-repeat="tag in todo.tags track by $index">[{{tag}}]</span>
 					</li>
+
 				</ul>
 				<form ng-submit="addTodo()">
 					<input type="text" ng-model="todoText"  size="30"
 					     placeholder="add new todo here">
+					</br>
+					<input type="text" ng-model="todoTags" ng-list="/[, ]/" placeholder="add new tag"><label>Separate by comma (,) or space ( )</label>
 					<input class="btn-primary" type="submit" value="add">
 				</form>
 			</div>
