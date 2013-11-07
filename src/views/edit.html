@@ -1,5 +1,9 @@
-	<input type="text" ng-model="todo.text"  size="30">
+<form name="form">
+	<input type="text" ng-model="todo.text"  size="30" required>
+    <span ng-show="form.name.$error.required" class="help-inline">
+        Required</span>
 	</br>
 	<input type="text" ng-model="todo.tags" ng-list="/[, ]/"><label>Separate by comma (,) or space ( )</label>
 	<input class="btn-primary" ng-click="save()"  ng-disabled="isClean()" type="submit" value="Save">
 	<input class="btn-primary" ng-click="destroy()" type="submit" value="Delete">
+</form>

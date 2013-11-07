@@ -38,7 +38,6 @@ todoApp.controller 'CreateCtrl', ($scope, $location, $timeout, Todos) ->
 todoApp.controller 'EditCtrl', ($scope, $location, $routeParams, angularFire, fbURL) ->
   angularFire(fbURL + $routeParams.id, $scope, "remote", {}).then ->
     $scope.todo = angular.copy($scope.remote)
-    console.log($scope.todo.text)
     $scope.todo.$id = $routeParams.todoId
     $scope.isClean = ->
       angular.equals $scope.remote, $scope.todo
