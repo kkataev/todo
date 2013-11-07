@@ -1,0 +1,9 @@
+<form>
+	<input type="text" ng-model="todo.text"  size="30"
+	     placeholder="add new todo here">
+	</br>
+	<input type="text" ng-model="todo.tags" ng-list="/[, ]/"
+		 placeholder="add new tag">
+	<label>Separate by comma (,) or space ( )</label>
+	<input class="btn-primary" type="submit" ng-click="save()" value="add">
+</form>

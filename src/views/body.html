@@ -1,6 +1,13 @@
-<div class="col-lg-8">
-	<ng:include src="'/views/tabs.html'"></ng:include>
-</div>
-<div class="col-lg-4">
-	<ng:include src="'/views/search-history.html'"></ng:include>
+<h2>Todo</h2>
+<div>
+	<span>{{remaining()}} of {{todos.length}} remaining</span>
+	<input type="text" ng-model="search.tags" class="search-query" placeholder="Search">
+	<ul class="unstyled">
+		<li ng-repeat="todo in todos | filter:search:strict">
+			<input type="checkbox" ng-model="todo.done">
+			<span class="done-{{todo.done}}"><a href="./#/edit/{{todo.$id}}">{{todo.text}}</a></span>
+			<span ng-repeat="tag in todo.tags track by $index">[{{tag}}]</span>
+		</li>
+
+	</ul>
 </div>
