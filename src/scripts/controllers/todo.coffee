@@ -1,4 +1,4 @@
-todoApp = angular.module('TodoApp', ['ngRoute', 'firebase']).
+todoApp = angular.module('TodoApp', ['ngRoute', 'firebase', 'ui.bootstrap']).
   value("fbURLTodos", "https://kkataev-todos.firebaseio.com/todos/").
   factory("Todos", (angularFireCollection, fbURLTodos) ->
     angularFireCollection fbURLTodos
@@ -43,6 +43,9 @@ todoApp.controller 'CreateCtrl', ($scope, $location, $timeout, Todos, Tags) ->
       $timeout ->
         $location.path "/"
 
+  $scope.tags = Tags
+  for key in $scope.tags
+    console.log($scope.tags[key])
 
 todoApp.controller 'EditCtrl', ($scope, $location, $routeParams, angularFire, fbURLTodos) ->
   angularFire(fbURLTodos + $routeParams.id, $scope, "remote", {}).then ->

@@ -89,11 +89,6 @@ module.exports = (grunt) ->
 					dest: './.temp/scripts/libs/'
 					expand: true
 				,
-					cwd: './bower_components/angular-animate/'
-					src: 'angular-animate.*'
-					dest: './.temp/scripts/libs/'
-					expand: true
-				,
 					cwd: './bower_components/angular-route/'
 					src: 'angular-route.*'
 					dest: './.temp/scripts/libs/'
@@ -109,18 +104,8 @@ module.exports = (grunt) ->
 					dest: './.temp/fonts/'
 					expand: true
 				,
-					cwd: './bower_components/html5shiv/dist/'
-					src: 'html5shiv-printshiv.js'
-					dest: './.temp/scripts/libs/'
-					expand: true
-				,
-					cwd: './bower_components/json3/lib/'
-					src: 'json3.min.js'
-					dest: './.temp/scripts/libs/'
-					expand: true
-				,
-					cwd: './bower_components/requirejs/'
-					src: 'require.js'
+					cwd: './bower_components/bootstrap-bower/'
+					src: 'ui-bootstrap-tpls.js'
 					dest: './.temp/scripts/libs/'
 					expand: true
 				]

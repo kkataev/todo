@@ -1,0 +1,9 @@
+<div ng-repeat="todo in todos">
+	<div ng-repeat="value in todo.tags.values track by $index">
+		<input type="text" ng-model="value.point">
+		{{value}}
+	</div>	
+</div>
+<input class="btn-primary" ng-click="save()" type="submit" value="Save">
+
+		

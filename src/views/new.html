@@ -4,7 +4,7 @@
     <span ng-show="form.name.$error.required" class="help-inline">
         Required</span>
 	</br>
-	<input type="text" ng-model="todo.tags" ng-list="/[, ]/"
+	<input type="text" ng-model="todo.tags" typeahead="tag for tag in tags | filter:$viewValue" ng-list="/[, ]/"
 		 placeholder="add new tag">
 	<label>Separate by comma (,) or space ( )</label>
 	<input class="btn-primary" type="submit" ng-click="save()" value="add">
