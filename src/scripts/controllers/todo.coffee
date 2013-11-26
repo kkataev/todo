@@ -1,8 +1,13 @@
 todoApp = angular.module('TodoApp', ['ngRoute', 'firebase']).
-  value("fbURL", "https://kkataev-todos.firebaseio.com/").
-  factory("Todos", (angularFireCollection, fbURL) ->
-    angularFireCollection fbURL
+  value("fbURLTodos", "https://kkataev-todos.firebaseio.com/todos/").
+  factory("Todos", (angularFireCollection, fbURLTodos) ->
+    angularFireCollection fbURLTodos
+  ).
+  value("fbURLTags", "https://kkataev-todos.firebaseio.com/tags/").
+  factory("Tags", (angularFireCollection, fbURLTags) ->
+    angularFireCollection fbURLTags
   )
+
 todoApp.config ["$routeProvider", ($routeProvider) ->
     $routeProvider
       .when("/edit/:id",
@@ -14,6 +19,10 @@ todoApp.config ["$routeProvider", ($routeProvider) ->
     ).when("/home",
       templateUrl: "views/body.html"
       controller: "ListCtrl"
+    )
+    .when("/tags",
+      templateUrl: "views/tags.html"
+      controller: "TagsCtrl"
     ).otherwise redirectTo: "/home"
   ]
 
@@ -22,21 +31,21 @@ todoApp.controller 'ListCtrl', ($scope, Todos) ->
 
   $scope.remaining = ->
     count = 0
-    angular.forEach $scope.todos, (todo) ->
+    for todo in $scope.todos
       count += (if todo.done then 0 else 1)
     count
 
-
-todoApp.controller 'CreateCtrl', ($scope, $location, $timeout, Todos) ->
+todoApp.controller 'CreateCtrl', ($scope, $location, $timeout, Todos, Tags) ->
   $scope.save = ->
-    console.log($scope.todo)
+    for tag in $scope.todo.tags
+      Tags.add tag
     Todos.add $scope.todo, ->
       $timeout ->
         $location.path "/"
 
 
-todoApp.controller 'EditCtrl', ($scope, $location, $routeParams, angularFire, fbURL) ->
-  angularFire(fbURL + $routeParams.id, $scope, "remote", {}).then ->
+todoApp.controller 'EditCtrl', ($scope, $location, $routeParams, angularFire, fbURLTodos) ->
+  angularFire(fbURLTodos + $routeParams.id, $scope, "remote", {}).then ->
     $scope.todo = angular.copy($scope.remote)
     $scope.todo.$id = $routeParams.todoId
     $scope.isClean = ->
@@ -49,3 +58,10 @@ todoApp.controller 'EditCtrl', ($scope, $location, $routeParams, angularFire, fb
     $scope.save = ->
       $scope.remote = angular.copy($scope.todo)
       $location.path "/"
+
+todoApp.controller 'TagsCtrl', ($scope, $location, $routeParams, angularFire, fbURL, Todos) ->
+  $scope.todos = Todos
+  $scope.save = ->
+    Todos.update $scope.todos, ->
+      $timeout ->
+        $location.path "/"
