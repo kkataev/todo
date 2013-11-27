@@ -36,16 +36,28 @@ todoApp.controller 'ListCtrl', ($scope, Todos) ->
     count
 
 todoApp.controller 'CreateCtrl', ($scope, $location, $timeout, Todos, Tags) ->
+  
+  $scope.tags = []
+  $scope.autocomleteTags = []
+  for tag in Tags
+    $scope.autocomleteTags.push tag.value
+  console.log($scope.autocomleteTags)
+
   $scope.save = ->
-    for tag in $scope.todo.tags
+    
+    for tag in $scope.tags
       Tags.add tag
+
+    $scope.todo.tags = $scope.tags
     Todos.add $scope.todo, ->
       $timeout ->
         $location.path "/"
 
-  $scope.tags = Tags
-  for key in $scope.tags
-    console.log($scope.tags[key])
+  $scope.addTag = ->
+    $scope.tag.point = '0'
+    $scope.tags.push $scope.tag
+    $scope.tag = null
+
 
 todoApp.controller 'EditCtrl', ($scope, $location, $routeParams, angularFire, fbURLTodos) ->
   angularFire(fbURLTodos + $routeParams.id, $scope, "remote", {}).then ->
@@ -68,3 +80,13 @@ todoApp.controller 'TagsCtrl', ($scope, $location, $routeParams, angularFire, fb
     Todos.update $scope.todos, ->
       $timeout ->
         $location.path "/"
+
+  ## DIRECTIVES
+
+todoApp.directive "ngEnter", ->
+  ($scope, element, attrs) ->
+    element.bind "keydown keypress", (event) ->
+      if event.which is 13
+        $scope.$apply ->
+          $scope.$eval attrs.ngEnter
+        event.preventDefault()

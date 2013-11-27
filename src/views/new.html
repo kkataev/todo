@@ -4,8 +4,10 @@
     <span ng-show="form.name.$error.required" class="help-inline">
         Required</span>
 	</br>
-	<input type="text" ng-model="todo.tags" typeahead="tag for tag in tags | filter:$viewValue" ng-list="/[, ]/"
-		 placeholder="add new tag">
+	<ul>
+		<li ng-repeat="tag in tags track by $index">{{tag.value}}</li>
+	</ul>
+	<input type="text" ng-model="tag.value" ng-enter="addTag()" typeahead="tag for tag in autocomleteTags | filter:$viewValue" 		 placeholder="add new tag">
 	<label>Separate by comma (,) or space ( )</label>
 	<input class="btn-primary" type="submit" ng-click="save()" value="add">
 </form>
