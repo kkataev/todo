@@ -1,5 +1,5 @@
 <form name="form">
-	<input type="text" ng-model="todo.text"  size="30"
+	<input type="text" name="name" ng-model="todo.text"  size="30"
 	     placeholder="add new todo here" required>
     <span ng-show="form.name.$error.required" class="help-inline">
         Required</span>
@@ -7,10 +7,11 @@
 	<ul>
 		<li ng-repeat="tag in tags track by $index">
 			<p>{{tag.value}}: {{tag.point}}</p>
-  			<div slider ng-model="tag.point"></div>
+  			<div class="ui-slider" ng-slider></div>
 		</li>
 	</ul>
 	<input type="text" ng-model="tag.value" ng-enter="addTag()" typeahead="tag.value for tag in autocompleteTags | filter:$viewValue" 		 placeholder="add new tag">
 	<label>Input tag name and press enter</label><br/>
 	<input class="btn-primary" type="submit" ng-click="save()" value="add">
+
 </form>

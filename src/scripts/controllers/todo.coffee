@@ -83,7 +83,7 @@ todoApp.controller 'TagsCtrl', ($scope, $location, $routeParams, angularFire, fb
 
   ## DIRECTIVES
 
-todoApp.directive "ngEnter", ->
+todoApp.directive 'ngEnter', ->
   ($scope, element, attrs) ->
     element.bind "keydown keypress", (event) ->
       if event.which is 13
@@ -91,24 +91,14 @@ todoApp.directive "ngEnter", ->
           $scope.$eval attrs.ngEnter
         event.preventDefault()
 
-
-
-todoApp.directive "slider", ->
-  restrict: "E"
-  transclude: false 
-  link: ($scope, $element) ->
-    console.log(11)
-    $element.slider
+todoApp.directive 'ngSlider', ->
+  ($scope, element) ->
+    $('div.ui-slider').slider
       min: 0
       max: 10
       slide: (event, ui) ->
-        $scope.tag.point = ui.values[0]
+        $scope.tag.point = ui.value
         $scope.$apply()
-
       change: (event, ui) ->
-        $scope.tag.point = ui.values[0]
+        $scope.tag.point = ui.value
         $scope.$apply()
-
-
-  template: "<div id=\"year-slider\"></div>"
-  replace: true

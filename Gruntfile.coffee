@@ -99,8 +99,8 @@ module.exports = (grunt) ->
 					dest: './.temp/scripts/libs/'
 					expand: true
 				,
-					cwd: './bower_components/bootstrap/dist/css/'
-					src: 'bootstrap.css'
+					cwd: './bower_components/bootstrap/less/'
+					src: '*.less'
 					dest: './.temp/styles/'
 					expand: true
 				,
@@ -217,10 +217,10 @@ module.exports = (grunt) ->
 					singleRun: true
 
 		# Compile LESS (.less) files to CSS (.css)
-		#less:
-			#app:
-				#files:
-					#'./.temp/styles/styles.css': './.temp/styles/styles.less'
+		less:
+			app:
+				files:
+					'./.temp/styles/styles.css': './.temp/styles/styles.less'
 
 		# Minifies index.html
 		# Extra white space and comments will be removed
@@ -387,7 +387,7 @@ module.exports = (grunt) ->
 		'clean:working'
 		'copy:app'
 		'coffee:app'
-		#'less'
+		'less'
 		'template:indexDev'
 		'copy:dev'
 	]
