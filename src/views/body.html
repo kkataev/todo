@@ -6,7 +6,7 @@
 		<li ng-repeat="todo in todos | filter:search:strict">
 			<input type="checkbox" ng-model="todo.done">
 			<span class="done-{{todo.done}}"><a href="./#/edit/{{todo.$id}}">{{todo.text}}</a></span>
-			<span ng-repeat="tag in todo.tags track by $index">[{{tag}}]</span>
+			<span ng-repeat="tag in todo.tags track by $index">[{{tag.value}}]</span>
 		</li>
 
 	</ul>

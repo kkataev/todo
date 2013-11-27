@@ -1,12 +1,9 @@
-todoApp = angular.module('TodoApp', ['ngRoute', 'firebase', 'ui.bootstrap']).
-  value("fbURLTodos", "https://kkataev-todos.firebaseio.com/todos/").
-  factory("Todos", (angularFireCollection, fbURLTodos) ->
-    angularFireCollection fbURLTodos
-  ).
-  value("fbURLTags", "https://kkataev-todos.firebaseio.com/tags/").
-  factory("Tags", (angularFireCollection, fbURLTags) ->
-    angularFireCollection fbURLTags
+todoApp = angular.module('TodoApp', ['ngRoute', 'firebase', 'ui.bootstrap', 'ngResource', 'ui.slider']).
+  value("fbURL", "https://kkataev-todos.firebaseio.com/todos/").
+  factory("Todos", (angularFireCollection, fbURL) ->
+    angularFireCollection fbURL
   )
+
 
 todoApp.config ["$routeProvider", ($routeProvider) ->
     $routeProvider
@@ -35,19 +32,22 @@ todoApp.controller 'ListCtrl', ($scope, Todos) ->
       count += (if todo.done then 0 else 1)
     count
 
-todoApp.controller 'CreateCtrl', ($scope, $location, $timeout, Todos, Tags) ->
+todoApp.controller 'CreateCtrl', ($scope, $location, $timeout, Todos) ->
   
   $scope.tags = []
-  $scope.autocomleteTags = []
-  for tag in Tags
-    $scope.autocomleteTags.push tag.value
-  console.log($scope.autocomleteTags)
+  $scope.autocompleteTags = []
+
+  $scope.todos = Todos
+  for todo in $scope.todos
+    for tag in todo.tags
+      isExist = false
+      for _tag in $scope.autocompleteTags
+        if tag.value == _tag.value
+          isExist = true
+      if isExist == false 
+        $scope.autocompleteTags.push tag
 
   $scope.save = ->
-    
-    for tag in $scope.tags
-      Tags.add tag
-
     $scope.todo.tags = $scope.tags
     Todos.add $scope.todo, ->
       $timeout ->
@@ -59,8 +59,8 @@ todoApp.controller 'CreateCtrl', ($scope, $location, $timeout, Todos, Tags) ->
     $scope.tag = null
 
 
-todoApp.controller 'EditCtrl', ($scope, $location, $routeParams, angularFire, fbURLTodos) ->
-  angularFire(fbURLTodos + $routeParams.id, $scope, "remote", {}).then ->
+todoApp.controller 'EditCtrl', ($scope, $location, $routeParams, angularFire, fbURL) ->
+  angularFire(fbURL + $routeParams.id, $scope, "remote", {}).then ->
     $scope.todo = angular.copy($scope.remote)
     $scope.todo.$id = $routeParams.todoId
     $scope.isClean = ->
@@ -90,3 +90,25 @@ todoApp.directive "ngEnter", ->
         $scope.$apply ->
           $scope.$eval attrs.ngEnter
         event.preventDefault()
+
+
+
+todoApp.directive "slider", ->
+  restrict: "E"
+  transclude: false 
+  link: ($scope, $element) ->
+    console.log(11)
+    $element.slider
+      min: 0
+      max: 10
+      slide: (event, ui) ->
+        $scope.tag.point = ui.values[0]
+        $scope.$apply()
+
+      change: (event, ui) ->
+        $scope.tag.point = ui.values[0]
+        $scope.$apply()
+
+
+  template: "<div id=\"year-slider\"></div>"
+  replace: true

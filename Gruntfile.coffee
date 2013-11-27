@@ -94,14 +94,24 @@ module.exports = (grunt) ->
 					dest: './.temp/scripts/libs/'
 					expand: true
 				,
-					cwd: './bower_components/bootstrap/less/'
-					src: '*'
+					cwd: './bower_components/angular-resource/'
+					src: 'angular-resource.js'
+					dest: './.temp/scripts/libs/'
+					expand: true
+				,
+					cwd: './bower_components/bootstrap/dist/css/'
+					src: 'bootstrap.css'
 					dest: './.temp/styles/'
 					expand: true
 				,
-					cwd: './bower_components/bootstrap/fonts/'
-					src: '*'
-					dest: './.temp/fonts/'
+					cwd: './bower_components/ui-slider/src'
+					src: 'slider.js'
+					dest: './.temp/scripts/libs/'
+					expand: true
+				,
+					cwd: './bower_components/jquery/'
+					src: '*.js'
+					dest: './.temp/scripts/libs/'
 					expand: true
 				,
 					cwd: './bower_components/bootstrap-bower/'
@@ -207,10 +217,10 @@ module.exports = (grunt) ->
 					singleRun: true
 
 		# Compile LESS (.less) files to CSS (.css)
-		less:
-			app:
-				files:
-					'./.temp/styles/styles.css': './.temp/styles/styles.less'
+		#less:
+			#app:
+				#files:
+					#'./.temp/styles/styles.css': './.temp/styles/styles.less'
 
 		# Minifies index.html
 		# Extra white space and comments will be removed
@@ -377,7 +387,7 @@ module.exports = (grunt) ->
 		'clean:working'
 		'copy:app'
 		'coffee:app'
-		'less'
+		#'less'
 		'template:indexDev'
 		'copy:dev'
 	]

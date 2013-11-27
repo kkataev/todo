@@ -5,6 +5,8 @@
 		"angular": "1.2.2",
 		"angular-route": "1.2.2",
 		"bootstrap": "~3.0.0",
-		"bootstrap-bower": "https://github.com/angular-ui/bootstrap-bower.git"
+		"bootstrap-bower": "https://github.com/angular-ui/bootstrap-bower.git",
+		"ui-slider": "https://github.com/angular-ui/ui-slider.git",
+		"angular-resource": "1.2.2"
 	}
 }

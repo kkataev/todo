@@ -3,7 +3,7 @@
     <span ng-show="form.name.$error.required" class="help-inline">
         Required</span>
 	</br>
-	<input type="text" ng-model="todo.tags" ng-list="/[, ]/"><label>Separate by comma (,) or space ( )</label>
+	<input type="text" ng-model="tag.value" ng-repeat="tag in todo.tags"><br/>
 	<input class="btn-primary" ng-click="save()"  ng-disabled="isClean()" type="submit" value="Save">
 	<input class="btn-primary" ng-click="destroy()" type="submit" value="Delete">
 </form>

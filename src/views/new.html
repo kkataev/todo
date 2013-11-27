@@ -5,9 +5,12 @@
         Required</span>
 	</br>
 	<ul>
-		<li ng-repeat="tag in tags track by $index">{{tag.value}}</li>
+		<li ng-repeat="tag in tags track by $index">
+			<p>{{tag.value}}: {{tag.point}}</p>
+  			<div slider ng-model="tag.point"></div>
+		</li>
 	</ul>
-	<input type="text" ng-model="tag.value" ng-enter="addTag()" typeahead="tag for tag in autocomleteTags | filter:$viewValue" 		 placeholder="add new tag">
-	<label>Separate by comma (,) or space ( )</label>
+	<input type="text" ng-model="tag.value" ng-enter="addTag()" typeahead="tag.value for tag in autocompleteTags | filter:$viewValue" 		 placeholder="add new tag">
+	<label>Input tag name and press enter</label><br/>
 	<input class="btn-primary" type="submit" ng-click="save()" value="add">
 </form>
