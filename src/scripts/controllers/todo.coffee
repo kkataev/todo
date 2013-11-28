@@ -31,8 +31,7 @@ todoApp.controller 'ListCtrl', ($scope, Todos) ->
       if(todo.tags != undefined)
         for tag in todo.tags
           todo.points += parseFloat(tag.point)
-      console.log(todo)
-      
+        
   $scope.remaining = ->
     count = 0
     for todo in $scope.todos

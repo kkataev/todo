@@ -1,17 +1,17 @@
 <form name="form">
-	<input type="text" name="name" ng-model="todo.text"  size="30"
+	<input type="text" name="text" ng-model="todo.text"  size="30"
 	     placeholder="add new todo here" required>
-    <span ng-show="form.name.$error.required" class="help-inline">
+    <span ng-show="form.text.$error.required" class="require">
         Required</span>
 	</br>
 	<ul>
-		<li ng-repeat="tag in tags track by $index">
+		<li class="tags" ng-repeat="tag in tags track by $index">
 			<p>{{tag.value}}: {{tag.point}}</p>
   			<div class="ui-slider" ng-slider></div>
 		</li>
 	</ul>
-	<input type="text" ng-model="tag.value" ng-enter="addTag()" typeahead="tag.value for tag in typeaheadTags | filter:$viewValue" 		 placeholder="add new tag">
-	<label>Input tag name and press enter</label><br/>
+	<input type="text" ng-model="tag.value" ng-enter="addTag()" size="30" typeahead="tag.value for tag in typeaheadTags | filter:$viewValue" 		 placeholder="Input tag name and press enter">
+	<br/>
 	<input class="btn-primary" type="submit" ng-click="save()" value="add">
 
 </form>

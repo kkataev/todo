@@ -1,6 +1,6 @@
 <form name="form">
-	<input type="text" ng-model="todo.text"  size="30" required>
-    <span ng-show="form.name.$error.required" class="help-inline">
+	<input type="text" name="text" ng-model="todo.text"  size="30" required>
+    <span ng-show="form.text.$error.required" class="require">
         Required</span>
 	</br>
 	<input type="text" ng-model="tag.value" ng-repeat="tag in todo.tags"><br/>

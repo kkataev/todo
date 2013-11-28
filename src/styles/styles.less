@@ -3,6 +3,73 @@
 .ng-cloak {
 	display: none;
 }
+body {
+	background: #eaeaea url('../img/bg.png');
+	font: 13px 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+h1 {
+	color: rgba(255, 255, 255, 0.3);
+	text-shadow: -1px -1px rgba(0, 0, 0, 0.2);
+	font-size: 70px;
+}
+header {
+	padding: 20px 0 0;
+}
+.main {
+	width: 270px;
+	margin: 0 auto;
+}
+.center {
+	text-align: center;
+}
+.require {
+	color:red;
+	margin: 8px -64px;
+}
+form {
+	width: 300px;
+	margin: 0 auto;
+}
+input {
+	width: 270px;
+	margin: 0 auto;
+	height: 30px;
+	padding: 8px;
+}
+.remaining {
+	display: block;
+	margin: 20px 0 10px;
+}
+ul {
+	padding:0;
+}
+.done-true {
+	text-decoration: line-through;
+}
+.todo {
+	font-size: 22px;
+}
+.tags {
+	list-style-type: none;
+}
+.tags p {
+	display: block;
+	width: auto;
+	padding: 7px 0 0;
+	font-size: 22px;
+}
+input[type="checkbox"] {
+	width: auto;
+	display: block;
+	margin: 5px;
+	float:left;
+}
+input[type="submit"] {
+	width: auto;
+	margin: 5px 0 0;
+	padding: 5px 10px;
+
+}
 
 .ui-slider {
 	position: relative;
@@ -72,6 +139,7 @@
 .ui-state-default,
 .ui-widget-content .ui-state-default,
 .ui-widget-header .ui-state-default {
+
 	border: 1px solid #d3d3d3;
 	background: #e6e6e6 url(images/ui-bg_glass_75_e6e6e6_1x400.png) 50% 50% repeat-x;
 	font-weight: normal;
@@ -158,6 +226,8 @@
 	font-size: 1em;
 }
 .ui-widget-content {
+	float: right;
+	margin: -28px 30px 10px 0;
 	border: 1px solid #aaaaaa;
 	background: #ffffff url(images/ui-bg_flat_75_ffffff_40x100.png) 50% 50% repeat-x;
 	color: #222222;
