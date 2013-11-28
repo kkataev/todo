@@ -1,9 +1,8 @@
-todoApp = angular.module('TodoApp', ['ngRoute', 'firebase', 'ui.bootstrap', 'ngResource', 'ui.slider']).
+todoApp = angular.module('TodoApp', ['ngRoute', 'ngAnimate', 'firebase', 'ui.bootstrap', 'ngResource', 'ui.slider']).
   value("fbURL", "https://kkataev-todos.firebaseio.com/todos/").
   factory("Todos", (angularFireCollection, fbURL) ->
     angularFireCollection fbURL
   )
-
 
 todoApp.config ["$routeProvider", ($routeProvider) ->
     $routeProvider
@@ -26,6 +25,14 @@ todoApp.config ["$routeProvider", ($routeProvider) ->
 todoApp.controller 'ListCtrl', ($scope, Todos) ->
   $scope.todos = Todos
 
+  if($scope.todos != undefined)
+    for todo in $scope.todos
+      todo.points = 0
+      if(todo.tags != undefined)
+        for tag in todo.tags
+          todo.points += parseFloat(tag.point)
+      console.log(todo)
+      
   $scope.remaining = ->
     count = 0
     for todo in $scope.todos
@@ -35,17 +42,21 @@ todoApp.controller 'ListCtrl', ($scope, Todos) ->
 todoApp.controller 'CreateCtrl', ($scope, $location, $timeout, Todos) ->
   
   $scope.tags = []
-  $scope.autocompleteTags = []
+  $scope.typeaheadTags = []
 
+  # Typeahead array
   $scope.todos = Todos
-  for todo in $scope.todos
-    for tag in todo.tags
-      isExist = false
-      for _tag in $scope.autocompleteTags
-        if tag.value == _tag.value
-          isExist = true
-      if isExist == false 
-        $scope.autocompleteTags.push tag
+  if $scope.todos != undefined
+    for todo in $scope.todos
+      if todo.tags != undefined
+        for tag in todo.tags
+          isExist = false
+          if $scope.typeaheadTags != []
+            for _tag in $scope.typeaheadTags
+              if tag.value == _tag.value
+                isExist = true
+          if isExist == false 
+            $scope.typeaheadTags.push tag
 
   $scope.save = ->
     $scope.todo.tags = $scope.tags
@@ -93,12 +104,9 @@ todoApp.directive 'ngEnter', ->
 
 todoApp.directive 'ngSlider', ->
   ($scope, element) ->
-    $('div.ui-slider').slider
+    $(element).slider
       min: 0
       max: 10
       slide: (event, ui) ->
-        $scope.tag.point = ui.value
-        $scope.$apply()
-      change: (event, ui) ->
         $scope.tag.point = ui.value
         $scope.$apply()

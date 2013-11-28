@@ -118,6 +118,11 @@ module.exports = (grunt) ->
 					src: 'ui-bootstrap-tpls.js'
 					dest: './.temp/scripts/libs/'
 					expand: true
+				,
+					cwd: './bower_components/angular-animate/'
+					src: 'angular-animate.js'
+					dest: './.temp/scripts/libs/'
+					expand: true
 				]
 			dev:
 				cwd: './.temp/'

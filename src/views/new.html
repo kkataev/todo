@@ -10,7 +10,7 @@
   			<div class="ui-slider" ng-slider></div>
 		</li>
 	</ul>
-	<input type="text" ng-model="tag.value" ng-enter="addTag()" typeahead="tag.value for tag in autocompleteTags | filter:$viewValue" 		 placeholder="add new tag">
+	<input type="text" ng-model="tag.value" ng-enter="addTag()" typeahead="tag.value for tag in typeaheadTags | filter:$viewValue" 		 placeholder="add new tag">
 	<label>Input tag name and press enter</label><br/>
 	<input class="btn-primary" type="submit" ng-click="save()" value="add">
 
