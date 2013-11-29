@@ -3,7 +3,14 @@
     <span ng-show="form.text.$error.required" class="require">
         Required</span>
 	</br>
-	<input type="text" ng-model="tag.value" ng-repeat="tag in todo.tags"><br/>
+	<ul>
+		<li class="tags" ng-repeat="tag in tags track by $index">
+			<span ng-click="removeTag(tag)">X</span>
+			<p>{{tag.value}}: {{tag.point}}</p>
+  			<div class="ui-slider" ng-slider></div>
+		</li>
+	</ul>
+	<input type="text" ng-model="tag.value" ng-enter="addTag()" size="30" typeahead="tag.value for tag in typeaheadTags | filter:$viewValue" 		 placeholder="Input tag name and press enter">
 	<input class="btn-primary" ng-click="save()"  ng-disabled="isClean()" type="submit" value="Save">
 	<input class="btn-primary" ng-click="destroy()" type="submit" value="Delete">
 </form>

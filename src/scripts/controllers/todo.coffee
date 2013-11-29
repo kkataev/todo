@@ -25,43 +25,59 @@ todoApp.config ["$routeProvider", ($routeProvider) ->
 todoApp.controller 'ListCtrl', ($scope, Todos) ->
   $scope.todos = Todos
 
-  if($scope.todos != undefined)
-    for todo in $scope.todos
-      todo.points = 0
-      if(todo.tags != undefined)
-        for tag in todo.tags
-          todo.points += parseFloat(tag.point)
-        
+
+
   $scope.remaining = ->
     count = 0
     for todo in $scope.todos
       count += (if todo.done then 0 else 1)
     count
 
-todoApp.controller 'CreateCtrl', ($scope, $location, $timeout, Todos) ->
+todoApp.factory("typeaheadData", ->
+  init: (Todos) ->
+    typeaheadTags = []
+    # Typeahead array
+    todos = Todos
+    if todos != undefined
+      for todo in todos
+        if todo.tags != undefined
+          for tag in todo.tags
+            isExist = false
+            if typeaheadTags != []
+              for _tag in typeaheadTags
+                if tag.value == _tag.value
+                  isExist = true
+            if isExist == false 
+              typeaheadTags.push tag
+
+    typeaheadTags
+)
+
+
+todoApp.controller 'CreateCtrl', ($scope, $location, $timeout, Todos, typeaheadData) ->
   
   $scope.tags = []
-  $scope.typeaheadTags = []
-
-  # Typeahead array
-  $scope.todos = Todos
-  if $scope.todos != undefined
-    for todo in $scope.todos
-      if todo.tags != undefined
-        for tag in todo.tags
-          isExist = false
-          if $scope.typeaheadTags != []
-            for _tag in $scope.typeaheadTags
-              if tag.value == _tag.value
-                isExist = true
-          if isExist == false 
-            $scope.typeaheadTags.push tag
+  $scope.typeaheadTags = typeaheadData.init(Todos)
 
   $scope.save = ->
+
     $scope.todo.tags = $scope.tags
+
+    if($scope.todo.tags != undefined)
+        sumPoint = 0
+        sumSteps = 0
+        for tag in $scope.todo.tags
+          sumPoint += parseFloat(tag.point)
+          sumSteps += 1
+        $scope.todo.points = sumPoint/sumSteps
+
     Todos.add $scope.todo, ->
       $timeout ->
         $location.path "/"
+
+  $scope.removeTag = (tag) ->
+    $scope.tags.splice($scope.tags.indexOf(tag), 1);
+    console.log($scope.tags)
 
   $scope.addTag = ->
     $scope.tag.point = '0'
@@ -69,10 +85,14 @@ todoApp.controller 'CreateCtrl', ($scope, $location, $timeout, Todos) ->
     $scope.tag = null
 
 
-todoApp.controller 'EditCtrl', ($scope, $location, $routeParams, angularFire, fbURL) ->
+todoApp.controller 'EditCtrl', ($scope, $location, $routeParams, angularFire, fbURL, typeaheadData, Todos) ->
   angularFire(fbURL + $routeParams.id, $scope, "remote", {}).then ->
+    $scope.typeaheadTags = typeaheadData.init(Todos)
+
     $scope.todo = angular.copy($scope.remote)
     $scope.todo.$id = $routeParams.todoId
+    $scope.tags = $scope.todo.tags
+
     $scope.isClean = ->
       angular.equals $scope.remote, $scope.todo
 
@@ -81,17 +101,30 @@ todoApp.controller 'EditCtrl', ($scope, $location, $routeParams, angularFire, fb
       $location.path "/"
 
     $scope.save = ->
+
+      $scope.todo.tags = $scope.tags
+
+      if($scope.todo.tags != undefined)
+        sumPoint = 0
+        sumSteps = 0
+        for tag in $scope.todo.tags
+          sumPoint += parseFloat(tag.point)
+          sumSteps += 1
+        $scope.todo.points = sumPoint/sumSteps
+
       $scope.remote = angular.copy($scope.todo)
       $location.path "/"
 
-todoApp.controller 'TagsCtrl', ($scope, $location, $routeParams, angularFire, fbURL, Todos) ->
-  $scope.todos = Todos
-  $scope.save = ->
-    Todos.update $scope.todos, ->
-      $timeout ->
-        $location.path "/"
+    $scope.addTag = ->
+      $scope.tag.point = '0'
+      $scope.tags.push $scope.tag
+      $scope.tag = null
 
-  ## DIRECTIVES
+    $scope.removeTag = (tag) ->
+      $scope.tags.splice($scope.tags.indexOf(tag), 1);
+      console.log($scope.tags)
+
+## DIRECTIVES
 
 todoApp.directive 'ngEnter', ->
   ($scope, element, attrs) ->

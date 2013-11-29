@@ -6,7 +6,7 @@
 	</br>
 	<ul>
 		<li class="tags" ng-repeat="tag in tags track by $index">
-			<p>{{tag.value}}: {{tag.point}}</p>
+			<span ng-click="removeTag(tag)">X</span><p>{{tag.value}}: {{tag.point}}</p>
   			<div class="ui-slider" ng-slider></div>
 		</li>
 	</ul>
