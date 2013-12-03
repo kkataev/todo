@@ -27,6 +27,7 @@
 				<div class="">
 					<a href="./#/home">Home</a>
 					<a href="./#/new">New Todo</a>
+					<span style="display:block; float:right;">{{user.email}} | <a ng-click="logout()">Logout</a></span>
 				</div>
 			</header>
 			<h1 class="center">Todo list</h1>
@@ -37,11 +38,12 @@
 		<script type="text/javascript" src="/scripts/libs/angular-resource.js"></script>
 		<script type="text/javascript" src="/scripts/libs/angular-animate.js"></script>
 		<script src="https://cdn.firebase.com/v0/firebase.js"></script>
+		<script src="https://cdn.firebase.com/v0/firebase-simple-login.js"/></script>
 		<script type="text/javascript" src="/scripts/libs/ui-bootstrap-tpls.js"></script>
 		<script type="text/javascript" src="/scripts/libs/jquery.js"></script>
 		<script type="text/javascript" src="/scripts/libs/jquery-ui.js"></script>
 		<script type="text/javascript" src="/scripts/libs/slider.js"></script>
-    	<script src="http://firebase.github.io/angularFire/angularFire.js"></script>
+    	<script type="text/javascript" src="/scripts/libs/angularFire.js"></script>
 		<script type="text/javascript" src="/scripts/controllers/todo.js"></script>
 	</body>
 </html>

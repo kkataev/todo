@@ -1,6 +1,5 @@
 <div>
 	<input type="search" ng-model="search" class="search-query" placeholder="Search"><br/>
-	<span class="remaining">{{remaining()}} of {{todos.length}} remaining</span>
 	<ul class="listTodo">
 		<li class="animate-repeat todo"  ng-repeat="todo in todos | filter:search:strict | orderBy:'points'">
 			<input type="checkbox" ng-model="todo.done">
