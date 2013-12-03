@@ -139,6 +139,7 @@ todoApp.directive 'ngSlider', ->
     $(element).slider
       min: 0
       max: 10
+      value: $scope.tag.point
       slide: (event, ui) ->
         $scope.tag.point = ui.value
         $scope.$apply()
