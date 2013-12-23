@@ -1,0 +1,585 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"s",
+				"sumSteps"
+			],
+			[
+				"sum",
+				"sumPoints"
+			],
+			[
+				"pa",
+				"padding-top"
+			],
+			[
+				"font",
+				"font-family"
+			],
+			[
+				"fun",
+				"function"
+			],
+			[
+				"ba",
+				"background-image"
+			],
+			[
+				"co",
+				"color"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "Gruntfile.coffee",
+			"settings":
+			{
+				"buffer_size": 11278,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/scripts/controllers/todo.coffee",
+			"settings":
+			{
+				"buffer_size": 4833,
+				"line_ending": "Unix",
+				"name": "TodoCtrl = ($scope) ->"
+			}
+		},
+		{
+			"file": "src/views/new.html",
+			"settings":
+			{
+				"buffer_size": 706,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/styles/styles.less",
+			"settings":
+			{
+				"buffer_size": 5176,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/index.html",
+			"settings":
+			{
+				"buffer_size": 2578,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "bower.json",
+			"settings":
+			{
+				"buffer_size": 333,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "dist/scripts/controllers/todo.js",
+			"settings":
+			{
+				"buffer_size": 6937,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/views/login.html",
+			"settings":
+			{
+				"buffer_size": 199,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "src/scripts/libs/angularFire.js",
+			"settings":
+			{
+				"buffer_size": 17184,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 287.0,
+		"selected_items":
+		[
+			[
+				"Package Control: ",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: s",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 449.0
+	},
+	"console":
+	{
+		"height": 126.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/kirillkataev/Documents/projects/todo/src/styles/styles.less",
+		"/Users/kirillkataev/Documents/projects/todo/dist/scripts/controllers/todo.js",
+		"/Users/kirillkataev/Documents/Hill30/AdminTool/Client/public/views/group-detail.html",
+		"/Users/kirillkataev/Documents/projects/todo/Gruntfile.coffee",
+		"/Users/kirillkataev/Documents/Hill30/AdminTool/Client/Gruntfile.coffee",
+		"/Users/kirillkataev/Documents/projects/todo/dist/index.html",
+		"/Users/kirillkataev/Documents/projects/todo/dist/scripts/controllers/todo.coffee",
+		"/Users/kirillkataev/Documents/projects/todo/bower.json",
+		"/Users/kirillkataev/Documents/projects/todo/src/scripts/controllers/todo.coffee",
+		"/Users/kirillkataev/Documents/projects/todo/src/index.html",
+		"/Users/kirillkataev/Documents/projects/AngularFun/package.json",
+		"/Users/kirillkataev/Documents/projects/AngularFun/src/scripts/routes.coffee",
+		"/Users/kirillkataev/Documents/projects/AngularFun/src/scripts/views.coffee",
+		"/Users/kirillkataev/Documents/projects/AngularFun/src/scripts/controllers/todo.coffee",
+		"/Users/kirillkataev/Documents/projects/AngularFun/Gruntfile.coffee",
+		"/Users/kirillkataev/Documents/projects/AngularFun/src/index.html",
+		"/Users/kirillkataev/Documents/projects/AngularFun/bower.json",
+		"/Users/kirillkataev/Documents/Hill30/WebApiTemplate/Client/public/views/vendors/templates/appFooterTemplate.html",
+		"/Users/kirillkataev/Documents/Hill30/WebApiTemplate/Client/public/views/vendors/templates/appHeaderTemplate.html",
+		"/Users/kirillkataev/Documents/Hill30/WebApiTemplate/Client/public/scripts/vendors.js",
+		"/Users/kirillkataev/Documents/Hill30/WebApiTemplate/Client/public/scripts/scripts.js",
+		"/Users/kirillkataev/Documents/Hill30/WebApiTemplate/Client/public/index.html",
+		"/Users/kirillkataev/Documents/Hill30/WebApiTemplate/Client/src/scripts/app.coffee",
+		"/Users/kirillkataev/Documents/Hill30/WebApiTemplate/Client/src/libs/vendors/Addus/AppHeader/src/scripts/directives/appHeaderDirective.coffee",
+		"/Users/kirillkataev/Documents/Hill30/WebApiTemplate/Client/public/scripts/views.js",
+		"/Users/kirillkataev/Documents/Hill30/WebApiTemplate/Client/public/styles/custom/styles.less",
+		"/Users/kirillkataev/Documents/Hill30/WebApiTemplate/Client/public/styles/custom/styles.css",
+		"/Users/kirillkataev/Desktop/Note/sftp-config.json",
+		"/Users/kirillkataev/Desktop/Note/detail.html",
+		"/Users/kirillkataev/Desktop/Scroll/jquery.js",
+		"/Users/kirillkataev/Desktop/Scroll/jquery.mousewheel.js",
+		"/Users/kirillkataev/Desktop/Palitra/index.html",
+		"/Users/kirillkataev/Desktop/Palitra/css/index.css",
+		"/Users/kirillkataev/Desktop/Scroll/index.css",
+		"/Users/kirillkataev/Desktop/Scroll/scroll.js",
+		"/Users/kirillkataev/Desktop/Scroll/index.html",
+		"/Users/kirillkataev/Desktop/Palitra/js/script.js",
+		"/Users/kirillkataev/Desktop/Palitra/css/bootstrap.min.css",
+		"/Users/kirillkataev/Desktop/Palitra/main.html",
+		"/Users/kirillkataev/Desktop/Palitra/js/Backboneapp.js",
+		"/C/Users/Home/Desktop/Palitra/css/bootstrap.min.css",
+		"/C/Users/Home/Desktop/Palitra/js/jarallax.js",
+		"/C/Users/user/Desktop/Palitra/Backboneapp.js",
+		"/C/Users/user/Desktop/Palitra/index.css"
+	],
+	"find":
+	{
+		"height": 40.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"\n		",
+			"}\n",
+			"coffeelint",
+			"coffelint",
+			"appHeader",
+			"$",
+			"scroll",
+			"calc",
+			"status.gif  ",
+			"tabs-left",
+			"wrapper",
+			".form-control:focus",
+			"padding",
+			"wrapper",
+			"label {\ndisplay: inline-block;",
+			"\n",
+			"сalc",
+			";\n",
+			"=\"\">",
+			"dice",
+			"title",
+			"important",
+			"calc"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 1,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "Gruntfile.coffee",
+					"settings":
+					{
+						"buffer_size": 11278,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 1489.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "src/scripts/controllers/todo.coffee",
+					"settings":
+					{
+						"buffer_size": 4833,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4280,
+								4259
+							]
+						],
+						"settings":
+						{
+							"auto_name": "TodoCtrl = ($scope) ->",
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 1.0,
+						"translation.y": 2196.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "src/views/new.html",
+					"settings":
+					{
+						"buffer_size": 706,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/HTML/HTML.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "src/styles/styles.less",
+					"settings":
+					{
+						"buffer_size": 5176,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 2213.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "src/index.html",
+					"settings":
+					{
+						"buffer_size": 2578,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 37.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "bower.json",
+					"settings":
+					{
+						"buffer_size": 333,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/JavaScript/JSON.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "dist/scripts/controllers/todo.js",
+					"settings":
+					{
+						"buffer_size": 6937,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1652.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "src/views/login.html",
+					"settings":
+					{
+						"buffer_size": 199,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								67,
+								67
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/HTML/HTML.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "src/scripts/libs/angularFire.js",
+					"settings":
+					{
+						"buffer_size": 17184,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								14719,
+								14719
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 7242.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 39.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.sftp":
+	{
+		"height": 124.0
+	},
+	"replace":
+	{
+		"height": 0.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 170.0,
+	"status_bar_visible": true
+}
