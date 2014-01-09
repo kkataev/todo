@@ -32,6 +32,13 @@ todoApp.controller 'ListCtrl', ($scope, angularFireAuth, angularFireCollection, 
   $scope.$on "angularFireAuth:login", (evt, user) ->
     $scope.todos = angularFireCollection fbURL
 
+  $scope.$on "angularFireAuth:error", (evt, error) ->
+    console.log(error)
+
+  $scope.logout = ->
+    console.log("Logout!")
+    angularFireAuth.logout()
+
 todoApp.factory("typeaheadData", ->
   init: (Todos) ->
     
